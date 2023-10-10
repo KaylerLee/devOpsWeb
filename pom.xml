@@ -12,6 +12,8 @@
     <url>http://www.myorganization.org</url>
 
     <properties>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
         <jsf-myfaces.version>1.2.10</jsf-myfaces.version>
         <jsf-ri.version>1.2_15</jsf-ri.version>        
         <maven.jetty.plugin.version>6.1.22</maven.jetty.plugin.version>
