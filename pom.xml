@@ -66,7 +66,16 @@
                     <version>${jsf-myfaces.version}</version>
                     <scope>runtime</scope>
                 </dependency>
+		    <dependency>
+   		 <groupId>org.codehaus.groovy</groupId>
+  		  <artifactId>groovy-all</artifactId>
+    		<version>2.3.11</version>
+   		 <scope>test</scope>
+		</dependency>
             </dependencies>
+
+
+		
         </profile>
         <profile>
             <!-- Active adding -Djsf=ri when execute maven goals. -->
