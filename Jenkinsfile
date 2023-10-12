@@ -35,16 +35,23 @@ pipeline{
             }
         }
 
+ stage('Deploy') {
+      steps {
+        sh 'curl -T target/*.war http://10.97.72.168:8888/manager/text/deploy?path=/&update=true -u robot:admin123'
+      }
+    }
 
-        stage ('Deploy to tomcat server') {
-            steps{
-                script{
-                    readProp = readProperties file: 'build.properties'
-                }
-                echo "This is running on ${readProp['deploy.type']}"
-                deploy adapters: [tomcat9(credentialsId: 'robot-tomcat', path: '', url: 'http://10.97.72.168:8888')], contextPath: null, war: '**/*.war'
-            }
-        }
+
+	    
+  //      stage ('Deploy to tomcat server') {
+   //         steps{
+  //              script{
+   //                 readProp = readProperties file: 'build.properties'
+  //              }
+  //              echo "This is running on ${readProp['deploy.type']}"
+   //             deploy adapters: [tomcat9(credentialsId: 'robot-tomcat', path: '', url: 'http://10.97.72.168:8888')], contextPath: null, war: '**/*.war'
+   //         }
+   //     }
 
 
 
